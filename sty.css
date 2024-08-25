@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+body {
+    background: linear-gradient(35deg, #ac5b5b, 70%, rgb(69, 200, 8));
+    min-height: 100vh;
+}
+
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    z-index: 1000;
+}
+
+.Header img {
+    height: 50px;
+    transform: scale(2);
+    filter: saturate(3);
+    transition: .1s ease;
+}
+
+.Header img:hover {
+    filter: saturate(3);
+    transform: scale(1.7);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 35px;
+    font-size: 19px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar a::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.navbar a:hover::before {
+    top: 0;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+section {
+    padding: 10rem 9% 2rem;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.text-content h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 550;
+}
+
+.text-content span {
+    font-size: 32px;
+    color: linear-gradient(35deg, #b16161, 70%, red);;
+}
+
+.text-content p {
+    font-size: 15px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    height: 45px;
+    width: 150px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    border: 2px solid rgb(0, 255, 0);
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.button {
+    margin: 20px 0;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    left: 0;
+    top: -100%;
+    background: linear-gradient(#0f0a0a, rgb(32, 255, 2), #0f0a0a, red);
+    transition: .5s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    top: 0;
+    transition: .5s ease;
+}
+
+.heading {
+    text-align: center;
+    font-size: 40px;
+}
+
+.ps a img {
+    height: 350px;
+    transition: 0.4s all;
+}
+
+.about {
+    background: linear-gradient(35deg, #b4a2a2, 70%, rgb(106, 255, 0));
+}
+
+.heading span {
+    color: rgb(255, 0, 0);
+}
+
+.team-section {
+    overflow: hidden;
+    text-align: center;
+}
+
+.ps a:hover > img {
+    filter: none;
+    transform: scale(1.03);
+}
+
+.portion {
+    width: 600px;
+    margin: auto;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    overflow: hidden;
+    height: 0;
+}
+
+.portion:target {
+    height: auto;
+}
+
+.name {
+    display: block;
+    color: #002060;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .Header {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .text-content h2 {
+        font-size: 32px;
+    }
+
+    .text-content span {
+        font-size: 24px;
+    }
+
+    .text-content p {
+        font-size: 14px;
+    }
+
+    .ps a img {
+        height: 100px;
+    }
+
+    .portion {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Header img {
+        height: 40px;
+        transform: scale(1.5);
+    }
+
+    .navbar a {
+        font-size: 17px;
+    }
+
+    .text-content h2 {
+        font-size: 28px;
+    }
+
+    .text-content span {
+        font-size: 20px;
+    }
+
+    .text-content p {
+        font-size: 13px;
+    }
+
+    .btn {
+        height: 40px;
+        width: 130px;
+        font-size: 15px;
+    }
+
+    .ps a img {
+        height: 150px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+}
+
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
